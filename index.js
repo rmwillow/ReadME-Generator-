@@ -1,11 +1,23 @@
 const fs = require("fs");
 const util = require("util");
 const inquirer = require("inquirer");
-const { writeFile, copyFile } = require('./Develop/utils/generateMarkdown');
+const generatePage = require('./src/page-template.js');
+const { writeFile, copyFile } = require('./utils/generateMarkdown');
 
 //Prompt the user questions to populate the README.md
 function promptUser() {
     return inquirer.prompt([{
+            type: 'input',
+            name: 'name',
+            message: 'What is your name? (Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your name!');
+                    return false;
+                }
+            },
             type: "input",
             name: "projectTitle",
             message: "What is the project title?",
@@ -75,15 +87,15 @@ const promptReadME = readMEData => {
     if (!readMEData.projects) {
         readMEData.projects = [];
     }
-    return inquirer
-        .then(projectData => {
-            readMEData.projects.push(projectData);
-            if (projectData.confirmAddProject) {
-                return promptReadME(readMEData);
-            } else {
-                return readMEData;
-            }
-        });
+    // return inquirer
+    //     .then(projectData => {
+    //         readMEData.projects.push(projectData);
+    //         if (projectData.confirmAddProject) {
+    //             return promptReadME(readMEData);
+    //         } else {
+    //             return readMEData;
+    //         }
+    //     });
 };
 
 //take user questions and write to html file in generateMarkdown page
