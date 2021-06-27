@@ -1,20 +1,16 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+//Create project title
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+//links I click on the links in the Table of Contents
+//THEN I am taken to the corresponding section of the README
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+//GitHub username this is added to the section of the README entitled Questions, with a link to my GitHub profile
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+//read me sections for each questions
+//description, installation instructions, usage information, contribution guidelines, and test instructions
 
-`;
-}
+//my email address, this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
+
+//badge added to license section
+//notice is added to the section of the README entitled License that explains which license the application is covered under
 
 module.exports = generateMarkdown;
