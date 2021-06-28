@@ -1,69 +1,97 @@
 # Professional README Generator
 
-# Your Project Title
 
 ## Description 
+This is a application that prompts the user specific questions to automatically generate a perfect README.md for any project in just a few minutes.
 
-## Table of Contents (Optional)
 
-If your README is very long, add a table of contents to make it easy for users to find what they need.
-
+## Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
 
+-----------------------
 
 ## Installation
+you will need to either download it or clone it to your machine.<br>
+Click the green "clone or download repository" button on the top<br>
+right of the repository. In order to clone, you will need to have<br>
+git installed on your computer.<br>
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Once project is installed/cloned install the packages below<br>
+* npm install prompt
+* npm install inquirer
 
 
+<br />
+Now your ready to use the application! 👏<br>
+
+👉  Open Terminal/command line in your text editor make sure you are in the project directory.<br>
+👉  enter ```node index.js``` and press enter.<br>
+👉  Answer the prompts accordingly.<br>
+👉  Once you get a response of success after anwsering all the prompts go ahead and <br>checkout your newly created README.md in the dist folder!<br>
+
+-----------------------
 ## Usage 
 
-Provide instructions and examples for use. Include screenshots as needed.
+<br />
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-```md
-![alt text](assets/images/screenshot.png)
-```
-
+https://user-images.githubusercontent.com/52016382/123696620-86adf580-d821-11eb-8a87-41a518a2a928.mp4
 
 ## Credits
+For badges & license https://shields.io/category/build
 
-List your collaborators, if any, with links to their GitHub profiles.
+Inquirer https://www.npmjs.com/package/inquirer
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+Prompt https://www.npmjs.com/package/prompt
 
-If you followed tutorials, include links to those here as well.
+node.js https://nodejs.org/en/
 
+<br />
+
+-----------------------
 
 ## License
+![badge](https://img.shields.io/npm/l/inquirer)
 
-The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
-
-
----
-
-🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
 
 ## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-
-## Features
-
-If your project has a lot of features, consider adding a heading called "Features" and listing them there.
+![Language](https://img.shields.io/github/languages/top/rmwillow/readme-generator-)
 
 
 ## Contributing
+![badge](https://img.shields.io/badge/GitHub-Rmwillow-pink)
 
-If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
+-----------------------
 
 ## Tests
+```
+ type: "input",
+            name: "username",
+            message: "Please enter your GitHub username: ",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your github username.');
+                    return false;
+                }
+            },
+        },
+```
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them.
+```
+async function init() {
+    try {
+        // Ask user questions and generate responses
+        const answers = await promptUser();
+        const generateContent = generateReadme(answers);
+        // Write new README.md to dist directory
+        await writeFileAsync('./dist/README.md', generateContent);
+        console.log('Successfully wrote to README.md');
+    } catch (err) {
+        console.log(err);
+    }
+}
+```
