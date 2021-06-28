@@ -1,8 +1,8 @@
 const fs = require("fs");
 const util = require("util");
 const inquirer = require("inquirer");
-const generatePage = require('./src/page-template.js');
-const { writeFile, copyFile } = require('./utils/generateMarkdown');
+const generateReadme = require("./utils/generateMarkdown.js")
+const writeFileAsync = util.promisify(fs.writeFile);
 
 //Prompt the user questions to populate the README.md
 function promptUser() {
@@ -80,54 +80,18 @@ function promptUser() {
     ]);
 }
 
-const promptReadME = readMEData => {
-    console.log(`ADD A NEW READ ME`)
-
-    // If there's no 'projects' array property, create one
-    if (!readMEData.projects) {
-        readMEData.projects = [];
-    }
-    // return inquirer
-    //     .then(projectData => {
-    //         readMEData.projects.push(projectData);
-    //         if (projectData.confirmAddProject) {
-    //             return promptReadME(readMEData);
-    //         } else {
-    //             return readMEData;
-    //         }
-    //     });
-};
-
-//take user questions and write to html file in generateMarkdown page
-promptUser()
-    .then(promptReadME)
-    .then(readMEData => {
-        return generatePage(readMEData);
-    })
-    .then(pageHTML => {
-        return writeFile(pageHTML);
-    })
-    .then(writeFileResponse => {
-        console.log(writeFileResponse);
-        return copyFile();
-    })
-    .then(copyFileResponse => {
-        console.log(copyFileResponse);
-    })
-    .catch(err => {
+// Async function using util.promisify 
+async function init() {
+    try {
+        // Ask user questions and generate responses
+        const answers = await promptUser();
+        const generateContent = generateReadme(answers);
+        // Write new README.md to dist directory
+        await writeFileAsync('./dist/README.md', generateContent);
+        console.log('Successfully wrote to README.md');
+    } catch (err) {
         console.log(err);
-    });
+    }
+}
 
-//     // TODO: Include packages needed for this application
-
-// // TODO: Create an array of questions for user input
-// const questions = [];
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
+init();

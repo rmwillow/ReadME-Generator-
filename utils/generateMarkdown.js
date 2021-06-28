@@ -1,37 +1,16 @@
-const fs = require('fs');
+function generateReadme(answers) {
+    return `
+<h1 align="center">${answers.projectTitle} 👋</h1>
+  
+![badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)<br />
+    <h1 align="center">${answers.title}</h1>
 
-// writing files
-const writeFile = fileContent => {
-    return new Promise((resolve, reject) => {
-        fs.writeFile('./dist/index.html', fileContent, err => {
-            if (err) {
-                reject(err);
-                return;
-            }
+    ${answers.description}
+    ${answers.usage}
+    ${answers.installation}
+    ${answers.contribution}
+    ${answers.tests}
+    `;
+}
 
-            resolve({
-                ok: true,
-                message: 'File created!'
-            });
-        });
-    });
-};
-
-// copying file
-const copyFile = () => {
-    return new Promise((resolve, reject) => {
-        fs.copyFile('./src/style.css', './dist/style.css', err => {
-            if (err) {
-                reject(err);
-                return;
-            }
-
-            resolve({
-                ok: true,
-                message: 'Stylesheet created!'
-            });
-        });
-    });
-};
-
-module.exports = { writeFile, copyFile };
+module.exports = generateReadme;
