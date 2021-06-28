@@ -42,14 +42,15 @@ function promptUser() {
             name: "license",
             message: "Chose the appropriate license for this project: ",
             choices: [
-                "Apache license 2.0	",
-                "Academic Free License v3.0	",
-                "GNU Affero General Public License v3.0	",
+                "Apache",
+                "Academic",
+                "GNU",
                 "ISC",
                 "MIT",
-                "Mozilla Public License 2.0	",
-                "Open Software License 3.0	",
-                "PostgreSQL License	"
+                "Mozilla",
+                "Open",
+                "PostgreSQL",
+                "Microsoft"
             ]
         },
         {
