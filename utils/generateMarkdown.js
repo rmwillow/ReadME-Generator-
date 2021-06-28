@@ -1,5 +1,6 @@
 // generateReadme function populating the README.md
 //table of contents contains links to each section 
+//icons cannot be placed in link id it will not work if you do
 
 function generateReadme(answers) {
     return `
@@ -8,11 +9,6 @@ function generateReadme(answers) {
 ![badge](https://img.shields.io/badge/license-${answers.license}-orange)<br />
 
 <br />
-
-## Description 📋
-${answers.description}
-
-
 
 ## Table of Contents
 - [Description](#description)
@@ -23,14 +19,21 @@ ${answers.description}
 - [Tests](#tests)
 - [Questions](#questions)
 
-## Installation 📁  
-${answers.installation}
+
+## Description 
+📋 ${answers.description}
 
 <br />
 <br />
 
-## Usage 💻 
-${answers.usage}
+## Installation  
+📁 ${answers.installation}
+
+<br />
+<br />
+
+## Usage
+💻 ${answers.usage}
 
 <br />
 <br />
@@ -43,20 +46,21 @@ This application is covered by the ${answers.license} license.
 <br />
 <br />
 
-## Contribution ➕ 
-${answers.contributing}
+## contribution
+➕ ${answers.contributors}
 
 <br />
 <br />
 
-## Tests ✔️ 
-${answers.tests}
+## Tests
+✔️ ${answers.tests}
 
 <br />
 <br />
 
-## Questions ❔ 
-${answers.questions}
+## Questions 
+
+❔${answers.questions}
 
 <br />
 <br />
@@ -70,7 +74,7 @@ ${answers.questions}
 <br />
 <br />
 
-## Created by Rachel McGrath [README-generator](https://github.com/rmwillow/ReadME-Generator-)
+### Created by Rachel McGrath [README-generator](https://github.com/rmwillow/ReadME-Generator-)
     `;
 }
 

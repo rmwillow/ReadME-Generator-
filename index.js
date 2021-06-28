@@ -54,7 +54,7 @@ function promptUser() {
         },
         {
             type: "input",
-            name: "contribution",
+            name: "contributors",
             message: "Who are the contributors of this projects?"
         },
         {
@@ -65,7 +65,7 @@ function promptUser() {
         {
             type: "input",
             name: "questions",
-            message: "What do I do if I have an issue? "
+            message: "What are the steps if there is an issue? "
         },
         {
             type: "input",

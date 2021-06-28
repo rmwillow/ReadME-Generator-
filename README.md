@@ -24,7 +24,8 @@ npm install inquirer
 
 
 ## Usage 
-demo app here
+
+https://user-images.githubusercontent.com/52016382/123696620-86adf580-d821-11eb-8a87-41a518a2a928.mp4
 
 ## Credits
 
