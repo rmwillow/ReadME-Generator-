@@ -11,6 +11,7 @@ This is a application that prompts the user specific questions to automatically 
 * [Credits](#credits)
 * [License](#license)
 
+-----------------------
 
 ## Installation
 you will need to either download it or clone it to your machine.<br>
@@ -22,13 +23,16 @@ Once project is installed/cloned install the packages below<br>
 * npm install prompt
 * npm install inquirer
 
+
+<br />
 Now your ready to use the application! 👏<br>
+
 👉  Open Terminal/command line in your text editor make sure you are in the project directory.<br>
 👉  enter ```node index.js``` and press enter.<br>
 👉  Answer the prompts accordingly.<br>
 👉  Once you get a response of success after anwsering all the prompts go ahead and <br>checkout your newly created README.md in the dist folder!<br>
 
-
+-----------------------
 ## Usage 
 
 <br />
@@ -46,8 +50,11 @@ node.js https://nodejs.org/en/
 
 <br />
 
+-----------------------
+
 ## License
 ![badge](https://img.shields.io/npm/l/inquirer)
+
 
 ## Badges
 ![Language](https://img.shields.io/github/languages/top/rmwillow/readme-generator-)
@@ -55,6 +62,8 @@ node.js https://nodejs.org/en/
 
 ## Contributing
 ![badge](https://img.shields.io/badge/GitHub-Rmwillow-pink)
+
+-----------------------
 
 ## Tests
 ```
