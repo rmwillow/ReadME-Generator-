@@ -42,7 +42,7 @@ This application is covered by the MIT license.
 <br />
 
 ## contribution
-➕ ![badge](https://img.shields.io/badge/GitHub-Rmwillow-pink)
+👥  ![badge](https://img.shields.io/badge/GitHub-Rmwillow-pink)
 
 <br />
 <br />

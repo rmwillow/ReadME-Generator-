@@ -47,7 +47,7 @@ This application is covered by the ${answers.license} license.
 <br />
 
 ## contribution
-➕ ${answers.contributors}
+👥  ${answers.contributors}
 
 <br />
 <br />

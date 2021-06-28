@@ -13,25 +13,30 @@ This is a application that prompts the user specific questions to automatically 
 
 
 ## Installation
+you will need to either download it or clone it to your machine.<br>
+Click the green "clone or download repository" button on the top<br>
+right of the repository. In order to clone, you will need to have<br>
+git installed on your computer.<br>
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Once project is installed/cloned install the packages below<br>
+* npm install prompt
+* npm install inquirer
 
-you will need to either download it or clone it to your machine. Click the green "clone or download repository" button on the top right of the repository. In order to clone, you will need to have git installed on your computer.
-
-Once project is installed/cloned install the packages below
-npm install prompt
-npm install inquirer
+Now your ready to use the application! 👏<br>
+👉  Open Terminal/command line in your text editor make sure you are in the project directory.<br>
+👉  enter ```node index.js``` and press enter.<br>
+👉  Answer the prompts accordingly.<br>
+👉  Once you get a response of success after anwsering all the prompts go ahead and <br>checkout your newly created README.md in the dist folder!<br>
 
 
 ## Usage 
 
+<br />
+
 https://user-images.githubusercontent.com/52016382/123696620-86adf580-d821-11eb-8a87-41a518a2a928.mp4
 
 ## Credits
-
 For badges & license https://shields.io/category/build
-
-Packages
 
 Inquirer https://www.npmjs.com/package/inquirer
 
@@ -39,20 +44,45 @@ Prompt https://www.npmjs.com/package/prompt
 
 node.js https://nodejs.org/en/
 
-
+<br />
 
 ## License
 ![badge](https://img.shields.io/npm/l/inquirer)
 
 ## Badges
-
 ![Language](https://img.shields.io/github/languages/top/rmwillow/readme-generator-)
 
 
 ## Contributing
-
 ![badge](https://img.shields.io/badge/GitHub-Rmwillow-pink)
 
 ## Tests
+```
+ type: "input",
+            name: "username",
+            message: "Please enter your GitHub username: ",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your github username.');
+                    return false;
+                }
+            },
+        },
+```
 
-test video
+```
+async function init() {
+    try {
+        // Ask user questions and generate responses
+        const answers = await promptUser();
+        const generateContent = generateReadme(answers);
+        // Write new README.md to dist directory
+        await writeFileAsync('./dist/README.md', generateContent);
+        console.log('Successfully wrote to README.md');
+    } catch (err) {
+        console.log(err);
+    }
+}
+```
