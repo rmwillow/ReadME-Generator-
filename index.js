@@ -7,20 +7,17 @@ const writeFileAsync = util.promisify(fs.writeFile);
 //Prompt the user questions to populate the README.md
 function promptUser() {
     return inquirer.prompt([{
-            type: 'input',
-            name: 'name',
-            message: 'What is your name? (Required)',
+            type: "input",
+            name: "projectTitle",
+            message: "What is the project title?",
             validate: nameInput => {
                 if (nameInput) {
                     return true;
                 } else {
-                    console.log('Please enter your name!');
+                    console.log('Please enter a project title.');
                     return false;
                 }
             },
-            type: "input",
-            name: "projectTitle",
-            message: "What is the project title?",
         },
         {
             type: "input",
@@ -50,12 +47,14 @@ function promptUser() {
                 "Mozilla",
                 "Open",
                 "PostgreSQL",
-                "Microsoft"
+                "Microsoft",
+                "Eclipse",
+                "Educational"
             ]
         },
         {
             type: "input",
-            name: "contributing",
+            name: "contribution",
             message: "Who are the contributors of this projects?"
         },
         {
@@ -71,13 +70,29 @@ function promptUser() {
         {
             type: "input",
             name: "username",
-            message: "Please enter your GitHub username: "
+            message: "Please enter your GitHub username: ",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your github username.');
+                    return false;
+                }
+            },
         },
         {
             type: "input",
             name: "email",
-            message: "Please enter your email: "
-        }
+            message: "Please enter your email: ",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your email.');
+                    return false;
+                }
+            },
+        },
     ]);
 }
 
